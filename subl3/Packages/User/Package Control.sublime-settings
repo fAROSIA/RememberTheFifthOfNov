@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Materialize",
+		"Package Control",
+		"Python PEP8 Autoformat",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeREPL",
+		"Theme - Glacier",
+		"Theme - SoDaReloaded",
+		"Theme - Solarized Flat",
+		"Tomorrow Color Schemes",
+		"Zen Tabs"
+	]
+}

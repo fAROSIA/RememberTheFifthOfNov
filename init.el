@@ -52,8 +52,9 @@
 (setq make-backup-files nil)
 (setq-default python-indent-offset 4)
 ;;============================================================Python
-(defvar python-indent-guess-indent-offset 4)
+(setq python-indent-guess-indent-offset nil)
 (elpy-enable)
+;;(setq python-shell-interpreter "ipython")
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))

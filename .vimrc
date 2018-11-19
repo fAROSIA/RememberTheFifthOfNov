@@ -63,9 +63,42 @@ let g:rbpt_colorpairs = [
     \ ] 
 au VimEnter * RainbowParenthesesToggle
 Plug 'vim-syntastic/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 Plug 'nvie/vim-flake8'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
+Plug 'Valloric/YouCompleteMe'
+" youcompleteme  默认tab  s-tab 和自动补全冲突
+" let g:ycm_key_list_select_completion=['<c-n>']
+" let g:ycm_key_list_select_completion = ['<Down>']
+" let g:ycm_key_list_previous_completion=['<c-p>']
+" let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_confirm_extra_conf=0      " 关闭加载.ycm_extra_conf.py提示
+let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+let g:ycm_collect_identifiers_from_tags_files=1                 " 开启 YCM基于标签引擎
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 "注释和字符串中的文字也会被收入补全
+let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_min_num_of_chars_for_completion=2                     " 从第2个键入字符就开始罗列匹配项
+"mapping
+nmap <leader>gd :YcmDiags<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" 直接触发自动补全
+let g:ycm_key_invoke_completion = '<C-Space>'"
+Plug 'tell-k/vim-autopep8'
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+let g:autopep8_ignore="E501"
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
 call plug#end()
 
 colors deus

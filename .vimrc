@@ -94,6 +94,8 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " 直接触发自动补全
 let g:ycm_key_invoke_completion = '<C-Space>'"
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
 Plug 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 let g:autopep8_ignore="E501"
